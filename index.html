@@ -50,21 +50,35 @@ button.s{background:#7cf}
 #cm{right:6.5%}
 #tools{position:absolute;right:1.5%;top:14%;flex-direction:column;align-items:flex-end;gap:2px;font-size:clamp(9px,1.4vw,15px);text-shadow:0 1px 4px #000}
 #tools button{padding:.3em .7em;margin:0}
+
+.fb{position:absolute;bottom:23%;width:14%;aspect-ratio:2/1;font-size:clamp(11px,2.3vw,26px);font-weight:900;line-height:1.1;color:#fff;border:3px solid #fff9;border-radius:14px;touch-action:none;user-select:none;-webkit-user-select:none;margin:0;padding:0;pointer-events:auto;text-shadow:0 1px 4px #000}
+#xf{left:3%;background:#e5393590}#xm{right:3%;background:#1e88e590}
+.fb.on{background:#fc3;color:#222;text-shadow:none}
+#xwp{position:absolute;inset:0;z-index:3;display:none;pointer-events:none}
+#xr{position:absolute;left:1.5%;top:27%;width:17%;aspect-ratio:260/220;pointer-events:none;filter:drop-shadow(0 0 6px #0f86)}
+#xlk{position:absolute;width:13%;aspect-ratio:1.6;transform:translate(-50%,-50%);border:3px dashed #fc3;border-radius:10px;display:none;align-items:flex-end;justify-content:center;font-size:clamp(9px,1.5vw,18px);font-weight:900;color:#fc3;text-shadow:0 1px 4px #000;pointer-events:none;box-shadow:0 0 10px #fc38}
+#xlk.lk{border:3px solid #f33;color:#f55;box-shadow:0 0 18px #f33,0 0 8px #f33 inset;animation:lkp .35s infinite alternate}
+@keyframes lkp{to{transform:translate(-50%,-50%) scale(.88)}}
+#xhp{position:absolute;left:50%;top:3%;transform:translateX(-50%);width:42%;z-index:3;display:none;text-align:center;font-weight:900;font-size:clamp(10px,1.8vw,20px);text-shadow:0 2px 6px #000;pointer-events:none}
+#xhp div{height:1.1em;border:2px solid #fff;border-radius:8px;background:#0008;overflow:hidden;margin-top:.2em}
+#xhp i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#e53935,#ff8a65)}
 </style></head><body>
 <div id="w"><canvas id="c"></canvas><div id="fx"></div><div id="hit"></div>
 <div id="top" class="hud"></div><div id="q" class="hud"></div><div id="msg" class="hud"></div>
 <div id="cam"><canvas id="cv" width="160" height="90"></canvas></div><div id="bar"></div>
 <div id="ctl"><button class="db" id="bu">▲ NAIK</button><button class="db" id="bd">▼ TURUN</button><button class="db" id="bl">◀ KIRI</button><button class="db" id="bn">🔥 NITRO</button><button class="db" id="br">KANAN ▶</button></div>
 <div id="tools"><div><button id="bc" class="s">🎯 Kalibrasi</button> <button id="br0" class="s">↺</button></div><label>Sensitivitas <input type="range" id="sn" min="1" max="10" value="5"></label></div>
+<div id="xhp"><b>👾 PESAWAT BOS</b><div><i id="xhpb"></i></div></div>
+<div id="xwp"><canvas id="xr" width="260" height="220"></canvas><div id="xlk"></div><button class="fb" id="xf">🔫 TEMBAK</button><button class="fb" id="xm">🚀 MISSILE <span id="xmc">×4</span></button></div>
 <button id="cm" title="Sudut kamera (tombol C)">🎥</button><button id="mu" title="Suara (tombol M)">🔊</button>
 <div id="mfd"><div class="scr"><div class="hd"><span>NAV-COM &#9679; MISSION QUESTION</span><span id="mm">UMUM</span><span>T-<b id="mc">15</b>s</span></div>
 <div class="mid"><div class="side"><div id="radar"><i></i></div><div>HDG <b id="hg">000</b>&deg;</div><div>ALT <b id="alt">0</b> FT</div></div>
 <div class="qb"><img id="mi" alt=""><div id="mq"></div><div id="mo"></div></div>
 <div class="side"><div>SPD <b id="sp">0</b> KT</div><div>GATES<br>A &middot; B &middot; C &middot; D</div><div style="color:#fc3">&#9888; TABRAK KOTAK JAWABAN YANG BENAR</div></div></div>
 <div class="ft"><span>WAKTU BACA</span><div id="mt"><i></i></div><button id="mk" class="s">LANJUT &#9654;</button></div></div></div>
-<div id="win"><div class="wt">SELAMAT!</div><div>Semua soal telah diselesaikan, pesawat mendarat dengan selamat</div><div id="wstar"></div><div id="wsc" style="font-weight:700"></div><button id="wb">Main Lagi</button></div>
+<div id="win"><div class="wt">SELAMAT!</div><div>Semua soal selesai &amp; pesawat bos berhasil dikalahkan — pesawat mendarat dengan selamat</div><div id="wstar"></div><div id="wsc" style="font-weight:700"></div><button id="wb">Main Lagi</button></div>
 <div id="menu"><h1>✈️ Sky Quiz Pilot 3D</h1>
-<div>Angkat <b>tangan kanan</b> ke samping → belok kiri · <b>tangan kiri</b> → belok kanan · <b>kedua tangan</b> → NITRO 🔥<br>Tangan di <b>sudut kanan atas</b> kotak kamera = <b>naik</b>, di <b>sudut kiri bawah</b> = <b>turun</b>. Kotak jawaban punya ketinggian acak.<br>Setiap 20 detik muncul pertanyaan: tabrak kotak jawaban yang benar!<br>🪙 Ambil koin sepanjang lintasan: 50 koin = +1 nyawa otomatis. ⚠️ Menabrak landmark/jembatan = -1 nyawa (jembatan: terbang di atas atau di bawah dek).<br>✈️ Pesawat lepas landas dulu, lalu terbang melewati 4 zona dengan suara lingkungan. 🔊 M = mute · 🎥 C = ganti sudut kamera (Wide / Long Wide / Normal / Atas).<br><small>Pakai kamera di ruangan terang, berdiri agak jauh agar lengan terlihat di sisi kiri & kanan layar. Cadangan: panah (atas/bawah/kiri/kanan) atau tombol ← → dan Spasi.</small></div>
+<div>Angkat <b>tangan kanan</b> ke samping → belok kiri · <b>tangan kiri</b> → belok kanan · <b>kedua tangan</b> → NITRO 🔥<br>Tangan di <b>sudut kanan atas</b> kotak kamera = <b>naik</b>, di <b>sudut kiri bawah</b> = <b>turun</b>. Kotak jawaban punya ketinggian acak.<br>Setiap 20 detik muncul pertanyaan: tabrak kotak jawaban yang benar!<br>🪙 Ambil koin sepanjang lintasan: 50 koin = +1 nyawa otomatis. ⚠️ Menabrak landmark/jembatan = -1 nyawa (jembatan: terbang di atas atau di bawah dek).<br>✈️ Pesawat lepas landas dulu, lalu terbang melewati 4 zona dengan suara lingkungan. 🔊 M = mute · 🎥 C = ganti sudut kamera (Wide / Long Wide / Normal / Atas).<br>👾 <b>BOS FINAL:</b> setelah semua soal selesai, pesawat bos menyerang! Sejajarkan pesawat dengan bos sampai <b>radar</b> (kiri) menampilkan <b>LOCK</b> → tembakan terarah otomatis & missile mengejar target.<br>🔫 <b>Tembak</b> = tombol layar / tangan di <b>sudut kiri atas</b> kotak kamera / tombol F atau Z · 🚀 <b>Missile</b> = tombol layar / tangan di <b>sudut kanan bawah</b> kotak kamera / tombol X atau V.<br><small>🎯 Kalibrasi: tempelkan warna/benda (mis. kertas putih) ke kotak kuning, lalu sensor hanya bereaksi pada warna itu.<br>Pakai kamera di ruangan terang, berdiri agak jauh agar lengan terlihat di sisi kiri & kanan layar. Cadangan: panah (atas/bawah/kiri/kanan) atau tombol ← → dan Spasi.</small></div>
 <div id="mw" style="display:none">📚 Pilih materi: <select id="ms" style="font:inherit;padding:.4em .6em;border-radius:8px;max-width:80vw"></select></div>
 <div><button id="b1">📷 Mulai dengan Kamera</button><button id="b2" class="s">⌨️ Mulai Tanpa Kamera</button></div><div id="err"></div></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -154,7 +168,10 @@ if(nit&&!pn)sfx.nitro();pn=nit}
 function toggleMute(){MUTED=!MUTED;$('mu').textContent=MUTED?'🔇':'🔊';if(MST)MST.gain.setTargetAtTime(MUTED?0:.9,AC.currentTime,.05)}
 $('mu').onclick=toggleMute;$('cm').onclick=cycCam;
 document.addEventListener('visibilitychange',()=>{if(AC)document.hidden?AC.suspend():AC.resume()});
-function zr(x0,y0,w,h){const d=cx.getImageData(x0,y0,w,h).data;let n=0;for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2],Y=.299*r+.587*g+.114*b,cb=128-.1687*r-.3313*g+.5*b,cr=128+.5*r-.4187*g-.0813*b;if(cal?(Y>40&&Math.abs(cb-cal[0])<15&&Math.abs(cr-cal[1])<15):(Y>50&&cb>77&&cb<127&&cr>135&&cr<175))n++}return n/(w*h)}
+function match(r,g,b){const Y=.299*r+.587*g+.114*b,cb=128-.1687*r-.3313*g+.5*b,cr=128+.5*r-.4187*g-.0813*b;
+if(!cal)return Y>50&&cb>77&&cb<127&&cr>135&&cr<175;
+return Math.abs(Y-cal[0])<cal[3]&&Math.abs(cb-cal[1])<cal[4]&&Math.abs(cr-cal[2])<cal[4]}
+function zr(x0,y0,w,h){const d=cx.getImageData(x0,y0,w,h).data;let n=0;for(let i=0;i<d.length;i+=4)if(match(d[i],d[i+1],d[i+2]))n++;return n/(w*h)}
 const R=new THREE.WebGLRenderer({canvas:$('c'),antialias:true});
 const S=new THREE.Scene();S.background=new THREE.Color(0x7ec8ff);S.fog=new THREE.Fog(0x9fd8ff,60,300);
 const C=new THREE.PerspectiveCamera(60,16/9,.1,500);C.position.set(0,4.5,11);C.lookAt(0,2.5,-60);
@@ -294,7 +311,7 @@ sc.forEach(m=>{m.position.z+=spd*dt;if(m.position.z>30)m.visible=false});cls.for
 const k2=Math.min(dt*1.5,1);S.background.lerp(tc[0],k2);S.fog.color.lerp(tc[1],k2);sea.material.color.lerp(tc[2],k2);
 bm.visible=af;bm.children.forEach((b,i)=>{b.rotation.z=Math.sin(t/800+i*1.7)*.5;b.rotation.x=Math.cos(t/900+i)*.3});
 if(lt>8.5){fa+=dt;if(fa>.3){fa=0;burst()}confetti();confetti()}
-if(lt>9&&!ws){ws=1;for(let k=0;k<6;k++)burst();$('wsc').textContent='Skor: '+score+' / '+TOT()*10;$('wstar').textContent='★'.repeat(Math.max(lives,0))+'☆'.repeat(Math.max(3-lives,0));$('win').style.display='flex'}}
+if(lt>9&&!ws){ws=1;for(let k=0;k<6;k++)burst();$('wsc').textContent='Skor: '+(score+bb)+' / '+(TOT()*10+50)+' · 🏆 Bos dikalahkan!';$('wstar').textContent='★'.repeat(Math.max(lives,0))+'☆'.repeat(Math.max(3-lives,0));$('win').style.display='flex'}}
 $('wb').onclick=()=>{$('win').style.display='none';st='over';$('menu').style.display='flex';$('menu').querySelector('h1').textContent='Main Lagi?'};
 // state
 let TH=.08,cal=null,calBox=false,nIn=false,PY=2.5,vy=0,vIn=0,su=0,sd=0,bq=null,bt=0,st='menu',score=0,lives=3,tq=0,used=[],nitro=false,dirIn=0,keys={},camOn=false,vel=0,last=0,spd=40;
@@ -328,7 +345,7 @@ function collide(dt,t){inv=Math.max(0,inv-dt);P.visible=inv<=0||Math.floor(t/80)
 for(const m of sc){if(!m.visible)continue;const z=m.position.z;if(z<-45||z>45)continue;const u=m.userData;
 if(u.band){if(Math.abs(z)<u.bd+2.2&&py+.45>u.band[0]&&py-.45<u.band[1]){hitObs(px);return}continue}
 if(u.cp){const s=m.scale.x;for(const c of u.cp){const dx=px-(m.position.x+c[0]*s),dz=z+c[1]*s;if(Math.abs(dx)<c[2]*s+2.4&&Math.abs(dz)<c[2]*s+2.2&&py-.4<-3+c[3]*s){hitObs(dx);return}}}}}
-function die(){st='dying';dyT=0;dsec=0;spd=0;nitro=false;fl.visible=false;dvy=3;$('q').style.display='none';$('mfd').style.display='none';bq=null;clr();cur=null;setAmb(-1);flash('PESAWAT HANCUR! 💥','#f66',3000)}
+function die(){bossClear();st='dying';dyT=0;dsec=0;spd=0;nitro=false;fl.visible=false;dvy=3;$('q').style.display='none';$('mfd').style.display='none';bq=null;clr();cur=null;setAmb(-1);flash('PESAWAT HANCUR! 💥','#f66',3000)}
 function dieStep(dt,t){dyT+=dt;dvy-=16*dt;P.position.y+=dvy*dt;P.position.x+=vel*dt*.3;vel*=Math.max(0,1-dt*2);P.rotation.z+=10*dt;P.rotation.x-=2.2*dt;prop.rotation.z+=dt*30;
 if(P.visible){if(Math.random()<.9)puff();spark(P.position.x,P.position.y,P.position.z,(Math.random()-.5)*8,Math.random()*5,(Math.random()-.5)*8,Math.random()<.5?cOr:cRd,.8)}
 if(!dsec&&(P.position.y<-2.4||dyT>1.5)){dsec=1;P.visible=false;explode(true)}
@@ -337,7 +354,7 @@ function gameOver(){st='over';sfx.over();$('menu').style.display='flex';$('menu'
 const CAMS=[{n:'WIDE',fov:75,y:6.5,z:15},{n:'LONG WIDE',fov:92,y:10,z:26},{n:'NORMAL',fov:60,y:4.5,z:11},{n:'ATAS',fov:72,y:16,z:18}];let camI=0;
 function cycCam(){camI=(camI+1)%CAMS.length;flash('KAMERA: '+CAMS[camI].n,'#7cf',1500)}
 let tk=0,tf=[0,0];
-function reset(){score=0;lives=3;tq=0;used=[];clr();cur=null;nitro=false;vel=0;PY=-1.75;vy=0;bq=null;$('mfd').style.display='none';setBio(0,true);tc[2].set(0x4c9a3a);sea.material.color.copy(tc[2]);C.position.set(0,2.4,CAMS[camI].z);C.fov=CAMS[camI].fov;rw.visible=true;rw.material.opacity=1;wh.visible=true;bm.visible=false;$('win').style.display='none';td=0;spd=0;$('q').style.display='none';$('bar').style.width='0';P.position.set(0,-1.75,0);P.rotation.set(0,0,0);tk=0;tf=[0,0];rainI=0;ltV=0;bolt.visible=false;coins=0;inv=0;spinZ=0;shakeV=0;slowT=0;ts=1;hitV=0;ctm=4;P.visible=true;coinsOff();efx.on=0;fb2.visible=sw2.visible=false;st='takeoff'}
+function reset(){bb=0;bossClear();score=0;lives=3;tq=0;used=[];clr();cur=null;nitro=false;vel=0;PY=-1.75;vy=0;bq=null;$('mfd').style.display='none';setBio(0,true);tc[2].set(0x4c9a3a);sea.material.color.copy(tc[2]);C.position.set(0,2.4,CAMS[camI].z);C.fov=CAMS[camI].fov;rw.visible=true;rw.material.opacity=1;wh.visible=true;bm.visible=false;$('win').style.display='none';td=0;spd=0;$('q').style.display='none';$('bar').style.width='0';P.position.set(0,-1.75,0);P.rotation.set(0,0,0);tk=0;tf=[0,0];rainI=0;ltV=0;bolt.visible=false;coins=0;inv=0;spinZ=0;shakeV=0;slowT=0;ts=1;hitV=0;ctm=4;P.visible=true;coinsOff();efx.on=0;fb2.visible=sw2.visible=false;st='takeoff'}
 // animasi lepas landas: mesin menyala -> berakselerasi di landasan -> rotate -> naik
 function takeStep(dt,t){tk+=dt;const D1=4.2,D2=3.2;let s=0;
 if(tk<D1){spd=42*Math.pow(tk/D1,1.6);PY=-1.75;P.rotation.x+=(0-P.rotation.x)*dt*6;P.position.y=PY+(spd>8?Math.sin(t/55)*.02*(spd/42):0)}
@@ -358,25 +375,165 @@ $('mk').onclick=endBrief;
 function clr(){gates.forEach(g=>{S.remove(g);g.geometry.dispose();g.material.map.dispose();g.material.dispose()});gates=[]}
 function resolve(hit){clr();$('q').style.display='none';
 if(hit===cur.ok){score+=10;sfx.good();flash('BENAR! +10','#6f6')}else{lives--;sfx.bad();flash(hit<0?'Terlewat!':'SALAH!','#f66')}
-cur=null;tq=0;if(lives>0&&used.length>=TOT())land();if(lives<=0){st='over';setAmb(-1);sfx.over();$('menu').style.display='flex';$('menu').querySelector('h1').textContent='Game Selesai! Skor: '+score;$('b1').textContent='📷 Main Lagi (Kamera)';$('b2').textContent='⌨️ Main Lagi (Keyboard)'}}
+cur=null;tq=0;if(lives>0&&used.length>=TOT())startBoss();if(lives<=0){st='over';setAmb(-1);sfx.over();$('menu').style.display='flex';$('menu').querySelector('h1').textContent='Game Selesai! Skor: '+score;$('b1').textContent='📷 Main Lagi (Kamera)';$('b2').textContent='⌨️ Main Lagi (Keyboard)'}}
 // camera control (skin-colour detection on left/right outer zones)
 const vd=document.createElement('video');vd.playsInline=true;vd.muted=true;const cv=$('cv'),cx=cv.getContext('2d',{willReadFrequently:true});let sl=0,sr=0;
 // sensor: x,y,lebar,tinggi pada kanvas kamera 160x90 (luas masing-masing = 1/8 dari semula)
-const UP=[146,0,14,6],DN=[0,84,14,6],bx2=(x,y,w,h,on)=>{cx.strokeStyle=on?'#0f0':'#fff';cx.lineWidth=1;cx.strokeRect(x+.5,y+.5,w-1,h-1)};
-function scan(){if(!camOn||vd.readyState<2)return;cx.save();cx.scale(-1,1);cx.drawImage(vd,-160,0,160,90);cx.restore();if(calBox){cx.strokeStyle='#fc3';cx.lineWidth=2;cx.strokeRect(62,18,36,34)}const zw=13,zy=37,zh=16;let a=[0,0];
-[0,160-zw].forEach((x0,k)=>{const d=cx.getImageData(x0,zy,zw,zh).data;let n=0;for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2],Y=.299*r+.587*g+.114*b,cb=128-.1687*r-.3313*g+.5*b,cr=128+.5*r-.4187*g-.0813*b;if(cal?(Y>40&&Math.abs(cb-cal[0])<15&&Math.abs(cr-cal[1])<15):(Y>50&&cb>77&&cb<127&&cr>135&&cr<175))n++}a[k]=n/(zw*zh)});
+const SL=[34,37,13,16],SR=[114,37,13,16],UP=[113,19,14,6],DN=[33,64,14,6],bx2=(x,y,w,h,on)=>{cx.strokeStyle=on?'#0f0':'#fff';cx.lineWidth=1;cx.strokeRect(x+.5,y+.5,w-1,h-1)};
+function scan(){if(!camOn||vd.readyState<2)return;cx.save();cx.scale(-1,1);cx.drawImage(vd,-160,0,160,90);cx.restore();if(calBox){cx.strokeStyle='#fc3';cx.lineWidth=2;cx.strokeRect(65,23,30,24)}const a=[zr(SL[0],SL[1],SL[2],SL[3]),zr(SR[0],SR[1],SR[2],SR[3])];
 sl+=(a[0]-sl)*.4;sr+=(a[1]-sr)*.4;const T=TH,L=sl>T,Rr=sr>T;
-bx2(0,zy,zw,zh,L);bx2(160-zw,zy,zw,zh,Rr);
-nIn=L&&Rr;dirIn=nIn?0:(Rr?FLIP:L?-FLIP:0);su+=(zr(UP[0],UP[1],UP[2],UP[3])-su)*.4;sd+=(zr(DN[0],DN[1],DN[2],DN[3])-sd)*.4;const U=su>TH,D=sd>TH;vIn=U&&!D?1:D&&!U?-1:0;bx2(UP[0],UP[1],UP[2],UP[3],U);bx2(DN[0],DN[1],DN[2],DN[3],D)}
-function calib(){if(!camOn)return;calBox=true;flash('Wajah di kotak kuning','#fc3');setTimeout(()=>{const d=cx.getImageData(64,20,32,30).data,A=[],B=[];for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2],Y=.299*r+.587*g+.114*b,cb=128-.1687*r-.3313*g+.5*b,cr=128+.5*r-.4187*g-.0813*b;if(Y>40&&cb>70&&cb<135&&cr>128&&cr<180){A.push(cb);B.push(cr)}}calBox=false;if(A.length<80){flash('Kulit tak terdeteksi','#f66');return}A.sort((a,b)=>a-b);B.sort((a,b)=>a-b);cal=[A[A.length>>1],B[B.length>>1]];flash('Kalibrasi berhasil ✔','#6f6')},2500)}
+bx2(SL[0],SL[1],SL[2],SL[3],L);bx2(SR[0],SR[1],SR[2],SR[3],Rr);
+nIn=L&&Rr;dirIn=nIn?0:(Rr?FLIP:L?-FLIP:0);su+=(zr(UP[0],UP[1],UP[2],UP[3])-su)*.4;sd+=(zr(DN[0],DN[1],DN[2],DN[3])-sd)*.4;const U=su>TH,D=sd>TH;vIn=U&&!D?1:D&&!U?-1:0;bx2(UP[0],UP[1],UP[2],UP[3],U);bx2(DN[0],DN[1],DN[2],DN[3],D);scanW()}
+function calib(){if(!camOn)return;calBox=true;flash('Tempelkan warna/benda (mis. kertas putih) memenuhi kotak kuning','#fc3',3200);setTimeout(()=>{const d=cx.getImageData(66,24,28,22).data,Ys=[],Bs=[],Rs=[];for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2];Ys.push(.299*r+.587*g+.114*b);Bs.push(128-.1687*r-.3313*g+.5*b);Rs.push(128+.5*r-.4187*g-.0813*b)}calBox=false;const md=a=>{a.sort((x,y)=>x-y);return a[a.length>>1]};const Y=md(Ys),cb=md(Bs),cr=md(Rs),m=Math.hypot(cb-128,cr-128);if(Y<25){flash('Terlalu gelap, coba lagi','#f66');return}cal=[Y,cb,cr,m<22?32:75,m<22?14:18];flash((m<22?(Y>170?'Putih':Y<70?'Hitam':'Abu-abu'):'Warna')+' terkalibrasi ✔','#6f6',2000)},3000)}
 async function go(useCam){initAudio();$('err').textContent='';camOn=false;$('cam').style.display='none';if(vd.srcObject){vd.srcObject.getTracks().forEach(t=>t.stop());vd.srcObject=null}$('err').textContent='Memuat soal...';const src=await loadQ();$('err').textContent='';if(useCam){try{vd.srcObject=await navigator.mediaDevices.getUserMedia({video:{width:320,height:180,facingMode:'user'}});await vd.play();camOn=true;$('cam').style.display='block'}catch(e){camOn=false;$('cam').style.display='none';flash('Kamera tidak tersedia','#f66',3000);$('err').textContent='Kamera tidak tersedia, pakai keyboard (← → Spasi) atau tombol sentuh.'}}else{camOn=false}
 $('menu').style.display='none';$('ctl').style.display=camOn?'none':'block';$('tools').style.display=camOn?'flex':'none';reset();if(src==='sheet')flash('Soal: '+QB.length+($('ms').value?' ('+$('ms').value+')':''),'#6f6',2500);else if(src==='fail')flash('Gagal muat, pakai soal bawaan','#fc3',3000)}
 $('b1').onclick=()=>go(true);$('b2').onclick=()=>go(false);
 const ptr={l:0,r:0,n:0,u:0,d:0};[['bl','l'],['br','r'],['bn','n'],['bu','u'],['bd','d']].forEach(([id,k])=>{const e=$(id),s=v=>ev=>{ev.preventDefault();ptr[k]=v;e.classList.toggle('on',!!v)};e.onpointerdown=s(1);e.oncontextmenu=ev=>ev.preventDefault();['pointerup','pointerleave','pointercancel'].forEach(n=>e.addEventListener(n,s(0)))});
-$('bc').onclick=calib;$('br0').onclick=()=>{cal=null;flash('Kalibrasi direset','#fff')};$('sn').oninput=e=>TH=.14-e.target.value*.012;
+$('bc').onclick=calib;$('br0').onclick=()=>{cal=null;flash('Kembali ke deteksi kulit','#fff')};$('sn').oninput=e=>TH=.14-e.target.value*.012;
 const kk=e=>e.key.length>1?e.key:e.key.toLowerCase(),gk=e=>[' ','ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key);
 addEventListener('keydown',e=>{if(e.target.tagName==='SELECT')return;if((e.key==='m'||e.key==='M')&&!e.repeat)toggleMute();if((e.key==='c'||e.key==='C')&&!e.repeat)cycCam();if(gk(e))e.preventDefault();keys[kk(e)]=1});addEventListener('keyup',e=>{if(e.target.tagName==='SELECT')return;if(gk(e))e.preventDefault();keys[kk(e)]=0});
 addEventListener('blur',()=>{for(const k in keys)keys[k]=0;ptr.l=ptr.r=ptr.n=ptr.u=ptr.d=0});
+// ===== BOS FINAL: pesawat bos + radar pengunci target + tembakan & missile =====
+const BHP=70,LKX=6.5,LKY=4.5,MAXM=4,FR=[33,19,14,6],MSZ=[113,64,14,6];
+let bossOn=0,bossT=0,bossHp=0,lockP=0,locked=0,ammo=MAXM,rlT=0,fcd=0,mcd=0,pendM=0,camF=false,camM=false,sf=0,sm3=0,bhit=0,bd=0,bd2=0,gunAlt=0,ga2=0,wbF=0,lkSnd=0,bb=0,lastAmmo=-1;
+const tv1=new THREE.Vector3(),tv2=new THREE.Vector3(),pv=new THREE.Vector3();
+sfx.shoot=()=>tone(1100,380,.07,'square',.05);
+sfx.missile=()=>{hiss(.7,'bandpass',1800,500,.35,0,1.2);tone(220,520,.5,'sawtooth',.1)};
+sfx.bhit=()=>tone(260,120,.07,'square',.06);
+sfx.eshoot=()=>tone(420,140,.2,'sawtooth',.07);
+sfx.lk1=()=>tone(1500,1500,.05,'sine',.07);
+sfx.lk2=()=>{tone(2200,2200,.12,'square',.08);tone(2200,2200,.12,'square',.08,.16)};
+sfx.alarm=()=>{for(let i=0;i<4;i++)tone(880,620,.35,'sawtooth',.14,i*.45)};
+sfx.boom=()=>{hiss(.6,'lowpass',2500,80,.6);tone(110,35,.5,'sine',.4)};
+
+// --- model pesawat bos (menghadap ke arah pemain, +z) ---
+const BOSSG=new THREE.Group(),bMats=[];
+{const dk=M(0x2b2f3b),rd=M(0xc62828),gy=M(0x5a6172);bMats.push(dk,rd,gy);
+const eye=new THREE.MeshBasicMaterial({color:0xff3030}),fire=new THREE.MeshBasicMaterial({color:0xff9a22});
+const add=(geo,mat,x,y,z,ax,ay,az)=>{const m=new THREE.Mesh(geo,mat);m.position.set(x,y,z);m.rotation.set(ax||0,ay||0,az||0);BOSSG.add(m);return m};
+add(new THREE.CylinderGeometry(1.2,1.7,9,16),dk,0,0,0,Math.PI/2);
+add(new THREE.ConeGeometry(1.2,3.4,16),rd,0,0,6.1,Math.PI/2);
+add(new THREE.SphereGeometry(.7,12,10),eye,0,.9,1.8).scale.set(1,.8,2);
+add(new THREE.BoxGeometry(8.5,.7,3.4),gy,-5.2,0,-.8,0,-.45);
+add(new THREE.BoxGeometry(8.5,.7,3.4),gy,5.2,0,-.8,0,.45);
+add(new THREE.BoxGeometry(1.6,3,.5),rd,-9,.7,-2.2);add(new THREE.BoxGeometry(1.6,3,.5),rd,9,.7,-2.2);
+add(new THREE.BoxGeometry(4.4,.22,1.6),gy,0,0,-4.4);
+add(new THREE.BoxGeometry(.22,2.2,1.5),rd,-1.6,1,-4.3);add(new THREE.BoxGeometry(.22,2.2,1.5),rd,1.6,1,-4.3);
+for(const s of[-1,1]){add(new THREE.CylinderGeometry(.5,.6,2.4,10),gy,s*1.9,-.1,-3.4,Math.PI/2);add(new THREE.ConeGeometry(.45,1.6,8),fire,s*1.9,-.1,-5.2,-Math.PI/2);
+add(new THREE.CylinderGeometry(.22,.22,2.4,8),dk,s*3.4,-.35,1.6,Math.PI/2);add(new THREE.SphereGeometry(.28,8,6),eye,s*3.4,-.35,2.9)}
+BOSSG.scale.setScalar(2.4);BOSSG.visible=false;S.add(BOSSG)}
+
+// --- kolam peluru ---
+const PB=[],EB=[],MSL=[];
+{const pg=new THREE.BoxGeometry(.14,.14,1.8),pm=new THREE.MeshBasicMaterial({color:0xffee66,fog:false});
+for(let i=0;i<40;i++){const m=new THREE.Mesh(pg,pm);m.visible=false;m.userData={v:new THREE.Vector3(),l:0};S.add(m);PB.push(m)}
+const eg=new THREE.SphereGeometry(.55,10,8),em=new THREE.MeshBasicMaterial({color:0xff3a2a,fog:false}),gg=new THREE.SphereGeometry(1.05,8,6),gm=new THREE.MeshBasicMaterial({color:0xff7a3a,transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false,fog:false});
+for(let i=0;i<64;i++){const m=new THREE.Mesh(eg,em);m.add(new THREE.Mesh(gg,gm));m.visible=false;m.userData={v:new THREE.Vector3(),l:0};S.add(m);EB.push(m)}
+const bo=new THREE.CylinderGeometry(.18,.18,1.8,8),nc=new THREE.ConeGeometry(.18,.6,8),fc2=new THREE.ConeGeometry(.15,.9,6),wm=new THREE.MeshPhongMaterial({color:0xf2f2f2}),rm=new THREE.MeshPhongMaterial({color:0xe53935}),flm=new THREE.MeshBasicMaterial({color:0xffaa22});
+for(let i=0;i<8;i++){const g2=new THREE.Group(),a=new THREE.Mesh(bo,wm),n=new THREE.Mesh(nc,rm),f=new THREE.Mesh(fc2,flm);a.rotation.x=Math.PI/2;n.rotation.x=Math.PI/2;n.position.z=1.2;f.rotation.x=-Math.PI/2;f.position.z=-1.3;
+const fn=new THREE.Mesh(new THREE.BoxGeometry(.9,.05,.5),rm);fn.position.z=-.7;const fn2=fn.clone();fn2.rotation.z=Math.PI/2;g2.add(a,n,f,fn,fn2);g2.visible=false;g2.userData={v:new THREE.Vector3(),l:0,s:0,h:0};S.add(g2);MSL.push(g2)}}
+
+// --- tombol digital ---
+{const bF=$('xf'),bM=$('xm');
+bF.onpointerdown=ev=>{ev.preventDefault();wbF=1;bF.classList.add('on')};
+['pointerup','pointerleave','pointercancel'].forEach(n=>bF.addEventListener(n,()=>{wbF=0;bF.classList.remove('on')}));
+bM.onpointerdown=ev=>{ev.preventDefault();pendM=1;bM.classList.add('on')};
+['pointerup','pointerleave','pointercancel'].forEach(n=>bM.addEventListener(n,()=>bM.classList.remove('on')));
+bF.oncontextmenu=bM.oncontextmenu=ev=>ev.preventDefault()}
+addEventListener('keydown',e=>{if(e.target.tagName==='SELECT'||e.repeat)return;if(e.key==='x'||e.key==='X'||e.key==='v'||e.key==='V')pendM=1});
+addEventListener('blur',()=>{wbF=0});
+
+// --- sensor kamera: tangan di sudut kiri atas = tembak, sudut kanan bawah = missile ---
+function scanW(){if(bossOn===1){sf+=(zr(FR[0],FR[1],FR[2],FR[3])-sf)*.4;sm3+=(zr(MSZ[0],MSZ[1],MSZ[2],MSZ[3])-sm3)*.4;camF=sf>TH;const mm=sm3>TH;if(mm&&!camM)pendM=1;camM=mm;
+bx2(FR[0],FR[1],FR[2],FR[3],camF);bx2(MSZ[0],MSZ[1],MSZ[2],MSZ[3],camM);cx.fillStyle='#fff';cx.font='bold 5px sans-serif';cx.fillText('TEMBAK',FR[0],FR[1]-1);cx.fillText('MISSILE',MSZ[0],MSZ[1]-1)}else{camF=camM=false;sf=sm3=0}}
+
+// --- alur bos ---
+function startBoss(){bossOn=1;bossT=0;bossHp=BHP;ammo=MAXM;rlT=0;fcd=0;mcd=0;pendM=0;lockP=0;locked=0;bhit=0;gunAlt=0;ga2=0;lastAmmo=-1;
+[PB,EB,MSL].forEach(a=>a.forEach(m=>m.visible=false));const b=BOSSG;b.userData={ready:0,cd:1.8,ph:0,vy:0};b.position.set(0,9,-190);b.rotation.set(0,0,0);b.visible=true;bMats.forEach(m=>m.emissive.setRGB(0,0,0));
+inv=Math.max(inv,1.5);$('bar').style.width='0';$('xwp').style.display='block';$('xhp').style.display='block';$('xhpb').style.width='100%';
+flash('⚠ PERINGATAN! PESAWAT BOS MENDEKAT','#f66',3200);sfx.alarm();hitV=.5}
+function bossClear(){bossOn=0;BOSSG.visible=false;[PB,EB,MSL].forEach(a=>a.forEach(m=>m.visible=false));$('xwp').style.display='none';$('xhp').style.display='none';$('xlk').style.display='none';lockP=0;locked=0;pendM=0;wbF=0;camF=camM=false}
+function hitBoss(dx){lives--;inv=2.6;vel+=(dx>=0?1:-1)*14;vy+=3;spinZ=10;explode(lives<=0);flash('TERTEMBAK!  −1 ❤️','#f66',1600);if(lives<=0)die()}
+function miniBoom(x,y,z){sfx.boom();for(let k=0;k<70;k++){const a=Math.random()*6.283,c=Math.acos(2*Math.random()-1),s=5+Math.random()*12;spark(x,y,z,s*Math.sin(c)*Math.cos(a),s*Math.cos(c),s*Math.sin(c)*Math.sin(a),k%3===0?cYl:k%3===1?cOr:cRd,.5+Math.random()*.6)}shakeV=Math.max(shakeV,.5);flashV=Math.max(flashV,.25)}
+function bossBoom(){const b=BOSSG,x=b.position.x,y=Math.max(b.position.y,-1),z=b.position.z;sfx.crash();
+for(let k=0;k<320;k++){const a=Math.random()*6.283,c=Math.acos(2*Math.random()-1),s=10+Math.random()*26,col=k%4===0?cYl:k%4===1?cOr:k%4===2?cRd:cGy;spark(x,y,z,s*Math.sin(c)*Math.cos(a),s*Math.cos(c)+4,s*Math.sin(c)*Math.sin(a),col,1+Math.random()*1.8)}
+efx.on=1;efx.t=0;efx.big=1;efx.x=x;efx.y=y;efx.z=z;shakeV=1.2;slowT=.9;flashV=Math.max(flashV,.85);bb=50}
+function bossDmg(n,q){if(bossOn!==1)return;bossHp-=n;bhit=.14;sfx.bhit();for(let k=0;k<(n>1?10:3);k++)spark(q.x,q.y,q.z,(Math.random()-.5)*10,Math.random()*6,(Math.random()-.5)*10,cOr,.4);
+if(bossHp<=0){bossHp=0;bossOn=2;bd=0;BOSSG.userData.vy=2;EB.forEach(m=>m.visible=false);locked=0;lockP=0;$('xlk').style.display='none';flash('BOS DIKALAHKAN! 💥','#6f6',3000);sfx.good()}}
+function bossFire(ph,px,py){const b=BOSSG,tx=px+vel*.35,sp=34+ph*5,mz=ph===0?[(gunAlt^=1)?-1:1]:[-1,1],fan=ph===2?[-.1,.1]:[0];sfx.eshoot();
+for(const s of mz){const ox=b.position.x+s*8.2,oy=b.position.y-.9,oz=b.position.z+6.7,dx=tx-ox,dy=py-oy,dz=-oz,L=Math.hypot(dx,dy,dz)||1;
+for(const a of fan){const m=EB.find(e=>!e.visible);if(!m)return;const ca=Math.cos(a),sa=Math.sin(a),nx=dx/L,nz=dz/L;m.userData.v.set(nx*ca+nz*sa,dy/L,-nx*sa+nz*ca).multiplyScalar(sp);m.position.set(ox,oy,oz);m.userData.l=4;m.visible=true;
+for(let k=0;k<2;k++)spark(ox,oy,oz,(Math.random()-.5)*4,(Math.random()-.5)*4,Math.random()*4,cOr,.3)}}}
+function fireBullet(px,py){const m=PB.find(a=>!a.visible);if(!m)return;sfx.shoot();const sx=px+((ga2^=1)?-1.1:1.1),sy=py-.1,sz=-1.2,v=m.userData.v;m.position.set(sx,sy,sz);
+if(locked&&bossOn===1)v.set(BOSSG.position.x-sx,BOSSG.position.y-sy,BOSSG.position.z-sz).setLength(130);else v.set(0,0,-130);
+m.userData.l=1;tv2.copy(m.position).add(v);m.lookAt(tv2);m.visible=true}
+function fireMissile(px,py){const m=MSL.find(a=>!a.visible);if(!m)return;ammo--;mcd=.7;sfx.missile();const d=m.userData;m.position.set(px,py-.4,-1);d.h=locked?1:0;d.s=40;d.l=3.2;
+if(d.h)d.v.set(BOSSG.position.x-px,BOSSG.position.y-py,BOSSG.position.z+1).setLength(40);else d.v.set(0,0,-40);m.visible=true;
+for(let k=0;k<8;k++)spark(px,py-.4,-1,(Math.random()-.5)*4,(Math.random()-.5)*3,Math.random()*4,cYl,.4)}
+
+function bossStep(dt,t){if(!bossOn)return;const b=BOSSG,u=b.userData,px=P.position.x,py=PY;bossT+=dt;
+bhit=Math.max(0,bhit-dt);{const e=bhit>0?bhit/.14:0;bMats.forEach(m=>m.emissive.setRGB(e*.6,e*.2,e*.15))}
+if(bossOn===1){
+ if(!u.ready){b.position.z+=(-58-b.position.z)*Math.min(dt*1.2,1);b.position.y+=(6-b.position.y)*Math.min(dt*1.5,1);if(b.position.z>-62){u.ready=1;flash('BOS MENYERANG! ⚔️','#f66',2200)}}
+ else{const hk=bossHp/BHP,ph=hk>.6?0:hk>.3?1:2;if(ph>u.ph){u.ph=ph;flash(ph===1?'BOS MARAH! FASE 2':'FASE TERAKHIR! 🔥','#f96',2200);sfx.alarm();hitV=.4}
+  const sp=.55+ph*.22,tx=Math.sin(bossT*sp)*8.5,ty=5.2+Math.sin(bossT*sp*1.6+1)*2.8,tz=-58+Math.sin(bossT*.7)*4,k=Math.min(dt*3,1);
+  b.position.x+=(tx-b.position.x)*k;b.position.y+=(ty-b.position.y)*k;b.position.z+=(tz-b.position.z)*k;b.rotation.z+=((tx-b.position.x)*-.04-b.rotation.z)*Math.min(dt*4,1);
+  u.cd-=dt;if(u.cd<=0){u.cd=[1.15,.85,.65][ph];bossFire(ph,px,py)}}
+ // radar mengunci target: bos harus berada di dalam jalur kunci
+ const dx=b.position.x-px,dy=b.position.y-py,inC=u.ready&&Math.abs(dx)<LKX&&Math.abs(dy)<LKY;
+ if(inC){lockP=Math.min(1,lockP+dt/1.0);if(!locked&&lockP>=1){locked=1;sfx.lk2()}else if(!locked){lkSnd-=dt;if(lkSnd<=0){lkSnd=.22;sfx.lk1()}}}
+ else{lockP=Math.max(0,lockP-dt/.5);if(locked&&lockP<.4)locked=0}
+ // senjata pemain
+ fcd-=dt;mcd-=dt;if(ammo<MAXM){rlT+=dt;if(rlT>=6){rlT=0;ammo++}}else rlT=0;
+ if((wbF||keys.f||keys.z||camF)&&fcd<=0){fcd=.12;fireBullet(px,py)}
+ if(pendM){pendM=0;if(ammo<=0)flash('MISSILE HABIS','#f96',700);else if(mcd<=0)fireMissile(px,py)}
+}else if(bossOn===2){bd+=dt;u.vy-=10*dt;b.position.y+=u.vy*dt;b.position.z+=dt*6;b.rotation.z+=dt*3;b.rotation.x+=dt*.6;inv=Math.max(inv,2);
+ for(let i=0;i<2;i++)spark(b.position.x+(Math.random()-.5)*8,b.position.y,b.position.z+(Math.random()-.5)*6,(Math.random()-.5)*4,Math.random()*3,Math.random()*8,Math.random()<.5?cOr:cGy,.8);
+ if(bd>1.7||b.position.y<-2){bossBoom();b.visible=false;bossOn=3;bd2=0}}
+else if(bossOn===3){bd2+=dt;inv=Math.max(inv,2);if(bd2>2.2){bossClear();land();return}}
+// peluru pemain
+for(const m of PB){if(!m.visible)continue;const v=m.userData.v,q=m.position;q.addScaledVector(v,dt);m.userData.l-=dt;
+ if(bossOn===1&&u.ready&&Math.abs(q.x-b.position.x)<9&&Math.abs(q.y-b.position.y)<3.4&&Math.abs(q.z-b.position.z)<6){m.visible=false;bossDmg(1,q);continue}
+ if(m.userData.l<=0||q.z<-130)m.visible=false}
+// missile pemain (mengejar jika target terkunci saat ditembakkan)
+for(const m of MSL){if(!m.visible)continue;const d=m.userData,q=m.position;d.l-=dt;d.s=Math.min(95,d.s+60*dt);
+ if(d.h&&bossOn===1){tv1.copy(b.position).sub(q).setLength(d.s);d.v.lerp(tv1,Math.min(dt*3.5,1))}
+ d.v.setLength(d.s);q.addScaledVector(d.v,dt);tv2.copy(q).add(d.v);m.lookAt(tv2);
+ spark(q.x,q.y,q.z+.8,Math.random()-.5,Math.random()-.5,2,Math.random()<.5?cOr:cGy,.45);
+ if(bossOn===1&&u.ready&&Math.abs(q.x-b.position.x)<9.5&&Math.abs(q.y-b.position.y)<4&&Math.abs(q.z-b.position.z)<7){m.visible=false;miniBoom(q.x,q.y,q.z);bossDmg(8,q);continue}
+ if(d.l<=0||q.z<-140)m.visible=false}
+// peluru bos
+for(const m of EB){if(!m.visible)continue;const d=m.userData,q=m.position;q.addScaledVector(d.v,dt);d.l-=dt;
+ if(inv<=0&&bossOn===1&&Math.abs(q.x-px)<1.9&&Math.abs(q.y-py)<1.1&&Math.abs(q.z-P.position.z)<2.6){m.visible=false;hitBoss(q.x-px);if(!bossOn||st!=='play')return;continue}
+ if(d.l<=0||q.z>8)m.visible=false}
+// HUD: bar nyawa bos, amunisi, kotak pengunci, radar
+$('xhpb').style.width=Math.max(0,bossHp/BHP*100)+'%';if(ammo!==lastAmmo){lastAmmo=ammo;$('xmc').textContent='×'+ammo;$('xm').style.opacity=ammo>0?1:.5}
+const lk=$('xlk');if(bossOn===1&&b.visible){pv.copy(b.position).project(C);if(pv.z<1){lk.style.display='flex';lk.style.left=(pv.x*50+50)+'%';lk.style.top=(-pv.y*50+50)+'%';lk.className=locked?'lk':'';lk.textContent=locked?'🔒 LOCK':lockP>.05?Math.round(lockP*100)+'%':''}else lk.style.display='none'}else lk.style.display='none';
+drawRadar(t)}
+
+// --- radar ---
+const RC=$('xr'),RX=RC.getContext('2d');
+function drawRadar(t){const c=RX,W2=260,H2=220,X0=110,Y0=110,R0=104,XS=3.6,ZS=1.3,b=BOSSG,px=P.position.x,live=bossOn===1&&b.visible;
+const pt=(x,z)=>{let a=(x-px)*XS,e=z*ZS,d=Math.hypot(a,e);if(d>R0-7){a*=(R0-7)/d;e*=(R0-7)/d}return[X0+a,Y0+e]};
+c.clearRect(0,0,W2,H2);c.save();c.beginPath();c.arc(X0,Y0,R0,0,6.2832);c.clip();
+c.fillStyle='rgba(2,22,12,.82)';c.fillRect(0,0,W2,H2);
+const sw=(t/1000*2)%6.2832-1.5708;c.fillStyle='rgba(0,255,140,.16)';c.beginPath();c.moveTo(X0,Y0);c.arc(X0,Y0,R0,sw-.6,sw);c.closePath();c.fill();c.strokeStyle='rgba(0,255,140,.75)';c.lineWidth=1;c.beginPath();c.moveTo(X0,Y0);c.lineTo(X0+Math.cos(sw)*R0,Y0+Math.sin(sw)*R0);c.stroke();
+const lw=LKX*XS;c.fillStyle=locked?'rgba(255,50,50,.28)':'rgba(255,230,70,.16)';c.fillRect(X0-lw,0,lw*2,Y0);c.setLineDash([4,4]);c.strokeStyle=locked?'#f55':'#fd4';c.beginPath();c.moveTo(X0-lw,0);c.lineTo(X0-lw,Y0);c.moveTo(X0+lw,0);c.lineTo(X0+lw,Y0);c.stroke();c.setLineDash([]);
+c.strokeStyle='rgba(0,255,140,.45)';[35,70,104].forEach(r=>{c.beginPath();c.arc(X0,Y0,r,0,6.2832);c.stroke()});c.beginPath();c.moveTo(X0,0);c.lineTo(X0,H2);c.moveTo(0,Y0);c.lineTo(W2,Y0);c.stroke();
+EB.forEach(m=>{if(!m.visible)return;const p=pt(m.position.x,m.position.z);c.fillStyle='#f55';c.fillRect(p[0]-1.5,p[1]-1.5,3,3)});
+MSL.forEach(m=>{if(!m.visible)return;const p=pt(m.position.x,m.position.z);c.fillStyle='#6df';c.fillRect(p[0]-1.5,p[1]-2,3,4)});
+if(live){const p=pt(b.position.x,b.position.z),dy=b.position.y-PY;c.strokeStyle='#f44';c.lineWidth=1.5;c.beginPath();c.arc(p[0],p[1],6+3*Math.sin(t/150),0,6.2832);c.stroke();c.fillStyle='#f33';c.beginPath();c.arc(p[0],p[1],4,0,6.2832);c.fill();
+ if(locked){c.strokeStyle='#ff0';c.strokeRect(p[0]-10,p[1]-10,20,20)}
+ if(Math.abs(dy)>LKY){c.fillStyle='#fd4';c.font='bold 12px monospace';c.textAlign='center';c.fillText(dy>0?'▲':'▼',p[0],p[1]+(dy>0?-10:19))}}
+c.fillStyle='#fff';c.beginPath();c.moveTo(X0,Y0-7);c.lineTo(X0-5,Y0+5);c.lineTo(X0+5,Y0+5);c.closePath();c.fill();c.restore();
+c.strokeStyle='#0f8';c.lineWidth=2;c.beginPath();c.arc(X0,Y0,R0,0,6.2832);c.stroke();
+c.font='bold 11px monospace';c.textAlign='center';c.fillStyle=locked?(Math.floor(t/200)%2?'#f55':'#fff'):lockP>.02?'#fd4':'#0f8';c.fillText(locked?'TARGET LOCKED':lockP>.02?'LOCKING '+Math.round(lockP*100)+'%':'SCANNING',X0,24);
+// tangga ketinggian
+const yOf=v=>205-Math.max(0,Math.min(10,v))/10*190;c.strokeStyle='#0f8';c.lineWidth=1.5;c.strokeRect(222,15,14,190);
+const y1=yOf(PY+LKY),y2=yOf(PY-LKY);c.fillStyle=locked?'rgba(255,50,50,.4)':'rgba(255,230,70,.3)';c.fillRect(223,y1,12,y2-y1);
+c.fillStyle='#0f8';c.font='bold 10px monospace';c.fillText('ALT',229,11);const yp=yOf(PY);c.fillStyle='#fff';c.beginPath();c.moveTo(214,yp-4);c.lineTo(214,yp+4);c.lineTo(221,yp);c.closePath();c.fill();
+if(live){c.fillStyle='#f33';c.fillRect(219,yOf(b.position.y)-2.5,20,5)}}
+
 // loop
 function loop(t){requestAnimationFrame(loop);const raw=Math.min((t-last)/1000,.05);last=t;slowT=Math.max(0,slowT-raw);ts=slowT>0?.28:ts+(1-ts)*Math.min(raw*4,1);const dt=raw*ts;
 if(st==='play'){scan();let d=camOn?dirIn:0,n=camOn&&nIn,v=camOn?vIn:0;if(!d&&!n&&!v){const kr=keys.ArrowRight||keys.d||ptr.r,kl=keys.ArrowLeft||keys.a||ptr.l,kn=keys[' ']||ptr.n;const kd=(kr?1:0)-(kl?1:0);if(kd)d=kd;if(kn)n=true;const ku=keys.ArrowUp||keys.w||ptr.u,kb=keys.ArrowDown||keys.s||ptr.d;v=(ku?1:0)-(kb?1:0);$('bu').classList.toggle('on',!!ku);$('bd').classList.toggle('on',!!kb);$('br').classList.toggle('on',!!kr);$('bl').classList.toggle('on',!!kl);$('bn').classList.toggle('on',!!kn)}
@@ -384,13 +541,13 @@ nitro=n;
 spd+=((nitro?85:40)-spd)*dt*3;vel+=(d*16-vel)*dt*6;vy+=(v*11-vy)*dt*6;PY=Math.max(.3,Math.min(9.5,PY+vy*dt));P.position.x=Math.max(-9,Math.min(9,P.position.x+vel*dt));
 P.rotation.z+=spinZ*dt;spinZ*=Math.max(0,1-dt*2.2);P.rotation.z=((P.rotation.z+Math.PI)%6.2832+6.2832)%6.2832-Math.PI;P.rotation.z+=(-vel*.05-P.rotation.z)*(spinZ>1?0:dt*6);P.rotation.x+=(vy*.03-P.rotation.x)*dt*6;P.position.y=PY+Math.sin(t/500)*.15;const cm=CAMS[camI];C.fov+=((nitro?cm.fov+10:cm.fov)-C.fov)*dt*4;C.updateProjectionMatrix();C.position.x+=(P.position.x*.5-C.position.x)*dt*4;C.position.y+=(cm.y+(PY-2.5)*.6-C.position.y)*dt*4;C.position.z+=(cm.z-C.position.z)*dt*4;C.lookAt(C.position.x*.6,2.5+(PY-2.5)*.4,-60);
 fl.visible=nitro;fl.scale.y=.8+Math.random()*.5;prop.rotation.z+=dt*60;
-if(bq){bt-=dt;$('mc').textContent=Math.ceil(Math.max(bt,0));$('mt').firstElementChild.style.width=Math.max(bt,0)/15*100+'%';$('hg').textContent=String(Math.round((360+P.position.x*3)%360)).padStart(3,'0');$('alt').textContent=Math.round(PY*500+1000);$('sp').textContent=Math.round(spd*5);if(bt<=0)endBrief()}else if(!cur){tq+=dt;$('bar').style.width=(tq/20*100)+'%';if(tq>=20){let i;do{i=Math.floor(Math.random()*QB.length)}while(used.includes(i)&&used.length<QB.length);used.push(i);brief(QB[i])}}
+if(bq){bt-=dt;$('mc').textContent=Math.ceil(Math.max(bt,0));$('mt').firstElementChild.style.width=Math.max(bt,0)/15*100+'%';$('hg').textContent=String(Math.round((360+P.position.x*3)%360)).padStart(3,'0');$('alt').textContent=Math.round(PY*500+1000);$('sp').textContent=Math.round(spd*5);if(bt<=0)endBrief()}else if(bossOn){bossStep(dt,t)}else if(!cur){tq+=dt;$('bar').style.width=(tq/20*100)+'%';if(tq>=20){let i;do{i=Math.floor(Math.random()*QB.length)}while(used.includes(i)&&used.length<QB.length);used.push(i);brief(QB[i])}}
 else{$('bar').style.width='100%';cur.z+=spd*dt*.8;gates.forEach(g=>g.position.z=cur.z);
 if(cur.z>-2.5&&!cur.done){let b=0,bd=99;gates.forEach((g,i)=>{const dd=Math.abs(P.position.x-g.position.x);if(dd<bd){bd=dd;b=i}});if(bd<2.3&&Math.abs(PY-cur.gy)<2.3){cur.done=true;resolve(b)}else if(cur.z>3){cur.done=true;resolve(-1)}}
 else if(cur.z>3&&!cur.done){cur.done=true;resolve(-1)}}
 ot.offset.y+=spd*dt*.023;bioT+=dt;if(bioT>=30)setBio((bio+1)%4);skyMix();S.background.lerp(sk,Math.min(dt*1.5,1));S.fog.color.lerp(fg2,Math.min(dt*1.5,1));sea.material.color.lerp(tc[2],Math.min(dt*1.5,1));
 sc.forEach(m=>{m.position.z+=spd*dt;if(m.position.z>30){if(m.userData.k===bio)m.position.z-=420;else m.visible=false}});cls.forEach(c=>{c.position.z+=spd*dt*.9;if(c.position.z>30)c.position.z-=420;});
-if(Math.random()<.9)puff();collide(dt,t);coinStep(dt);hud()}
+if(Math.random()<.9)puff();if(st==='play'){collide(dt,t);coinStep(dt)}hud()}
 else if(st==='takeoff'){takeStep(dt,t);hud()}
 wxStep(dt);
 sm.forEach(m=>{const u=m.userData;if(u.l>0){u.l-=dt*1.1;m.position.z+=spd*dt*.9;m.position.y+=dt*.4;const s=1+(1-u.l)*3;m.scale.setScalar(s);m.material.opacity=Math.max(u.l,0)*.55;m.material.color.setHex(u.n?0xffb060:0xffffff)}else m.material.opacity=0});
